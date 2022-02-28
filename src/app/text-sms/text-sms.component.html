@@ -1,0 +1,24 @@
+<section class="mt-3">
+    <div class="container border">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card border border-danger">
+                    <div class="card-header bg-secondary text-white">
+                        <p class="h4">SMS TEXT CONTROL APP</p>
+                    </div>
+                    <div class="card-body bg-light">
+                        <form>
+                            <textarea name="message" [(ngModel)]="message" (ngModelChange)="checkMaxLength($event)"  [maxlength]="maxCharCount" class="form-control" placeholder="your text here" rows="4"></textarea>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <p class="h6">The Characters Remaining : </p>
+                        <span class="fw-bold border m-1">{{message.length}}/{{maxCharCount}}</span>
+                        <span class="text-danger" *ngIf="message.length>=maxCharCount"> you are allowed to enter {{maxCharCount}} characters only </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</section>
